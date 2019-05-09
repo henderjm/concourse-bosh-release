@@ -9,6 +9,8 @@ ran_by="true"
 
 by "building concourse from source..."
 pushd /src
+  yarn install --force
+  yarn build
   go install github.com/gobuffalo/packr/packr
   packr build \
     -o /release/dev/base/concourse/bin/concourse \
